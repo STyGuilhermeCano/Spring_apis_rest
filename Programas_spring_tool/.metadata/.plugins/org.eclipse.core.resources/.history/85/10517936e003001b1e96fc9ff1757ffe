@@ -1,0 +1,5 @@
+package com.servico.global;
+
+public @interface Colunm {
+
+}

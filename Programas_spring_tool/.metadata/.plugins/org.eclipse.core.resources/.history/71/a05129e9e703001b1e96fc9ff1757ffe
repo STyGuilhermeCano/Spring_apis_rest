@@ -1,0 +1,10 @@
+package com.servico.global; // post - get - delete - update=put this class is my CRUD
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class Controller {
+	@Autowired
+	private ServicoRepository repository;
+}
