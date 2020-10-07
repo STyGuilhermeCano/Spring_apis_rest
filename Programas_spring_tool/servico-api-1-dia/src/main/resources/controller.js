@@ -1,10 +1,9 @@
 var app = angular.module('myApp', []);
 
 app.controller('myCtrl', function($scope, $http) {
-  $scope.id="1";
-  $scope.nome="Luizaa";
+  $scope.servicos = new Object();
 
-
+ 
 $scope.salvar = function() {
   $http.post("http://localhost:8080/servicos", {
     'id':$scope.id,
@@ -15,12 +14,12 @@ $scope.salvar = function() {
   
 };   
 
-$scope.get = function()
-{
-  $http.get("http://localhost:8080/servicos")
-  .then(function(resposta) {
-    console.info(resposta);
-  });
-}  
+$scope.getAll = function(){
+    $http.get("http://localhost:8080/servicos")
+    .then(function(resposta) {
+       $scope.servicos = resposta.data; 
+    });
+  }
 
+  $scope.getAll();
 });
